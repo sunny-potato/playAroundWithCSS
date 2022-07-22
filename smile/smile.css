@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.smileFace {
+  position: relative;
+  width: 15em;
+  height: 15em;
+  background-color: rgb(252, 252, 174);
+  border-radius: 50%;
+}
+.smileText::before {
+  content: "H";
+  font-size: 2rem;
+  color: rgb(244, 68, 68);
+  z-index: 1;
+}
+.smileText {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: bolder;
+  bottom: 5em;
+  right: -5.5em;
+  z-index: 1;
+}
+.eye {
+  position: absolute;
+  width: 1.5em;
+  height: 3em;
+  top: 4em;
+  border-radius: 50%;
+  background-color: black;
+  animation: shy 3s infinite alternate;
+}
+
+.eye.right {
+  position: absolute;
+  right: 4em;
+}
+
+.eye.left {
+  position: absolute;
+  left: 4em;
+}
+.blush {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  bottom: 6em;
+  border-radius: 50%;
+  background-color: rgb(242, 124, 124, 0.7);
+  box-shadow: 0 0 1em 1.2em rgb(242, 124, 124, 0.7);
+}
+.blush.left {
+  position: absolute;
+  left: 1.5em;
+}
+.blush.right {
+  position: absolute;
+  right: 1.5em;
+}
+.mouth {
+  position: absolute;
+  width: 10em;
+  height: 7em;
+  background-color: transparent;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 0.3em solid black;
+  border-radius: 50%;
+}
+
+@keyframes shy {
+  to {
+    border-top: 0.3em solid black;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+}
