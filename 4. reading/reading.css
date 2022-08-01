@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightsalmon;
+}
+
+.container {
+  width: 25em;
+  height: 25em;
+  background-color: brown;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.book {
+  position: absolute;
+  width: 8em;
+  height: 10em;
+  border-top-left-radius: 0.7em;
+  border-bottom-left-radius: 0.7em;
+  background-color: beige;
+  transform: rotate(-25deg);
+  box-shadow: 0.1em 0.3em 1em rgb(52, 51, 51);
+  animation: disappear 1.5s linear 2s forwards;
+  opacity: 0;
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(50%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.book::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 10%;
+  bottom: 0%;
+  border-top-left-radius: 0.8em;
+  border-bottom-left-radius: 0.7em;
+  background-color: transparent;
+  border: 1px solid rgb(156, 156, 142);
+  background: linear-gradient(
+    to bottom,
+    rgb(156, 156, 142) 0 10%,
+    transparent 10% 15%,
+    rgb(156, 156, 142) 15% 25%,
+    transparent 25% 30%,
+    rgb(156, 156, 142) 30% 40%,
+    transparent 40% 45%,
+    rgb(156, 156, 142) 45% 55%,
+    transparent 55% 60%,
+    rgb(156, 156, 142) 60% 70%,
+    transparent 75% 80%,
+    rgb(156, 156, 142) 80% 90%,
+    transparent 90% 95%,
+    rgb(156, 156, 142) 95% 100%
+  );
+}
+
+.book::after {
+  position: absolute;
+  content: "";
+  width: 2%;
+  height: 90%;
+  left: 10%;
+  background-color: rgb(156, 156, 142);
+}
+
+.book p {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  font-size: 1.5em;
+}
+
+.openBook.left {
+  position: relative;
+  width: 8em;
+  height: 10em;
+  border-right: 0.1em solid rgb(156, 156, 142);
+  border-top-right-radius: 0.7em;
+  border-bottom-right-radius: 0.7em;
+  background-color: beige;
+  opacity: 0;
+  transform-origin: right;
+  animation: open 1s linear 3.4s forwards;
+}
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(30deg) rotateY(0deg);
+  }
+}
+
+.openBook.left::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 7%;
+  bottom: 0%;
+  border-top-right-radius: 20em;
+  border-bottom-right-radius: 0.7em;
+  background-color: transparent;
+  border: 1px solid rgb(156, 156, 142);
+  box-sizing: border-box;
+  box-shadow: 0.1em 0.3em 1em rgb(52, 51, 51);
+  background: linear-gradient(
+    to bottom,
+    rgb(156, 156, 142) 0 10%,
+    transparent 10% 15%,
+    rgb(156, 156, 142) 15% 25%,
+    transparent 25% 30%,
+    rgb(156, 156, 142) 30% 40%,
+    transparent 40% 45%,
+    rgb(156, 156, 142) 45% 55%,
+    transparent 55% 60%,
+    rgb(156, 156, 142) 60% 70%,
+    transparent 75% 80%,
+    rgb(156, 156, 142) 80% 90%,
+    transparent 90% 95%,
+    rgb(156, 156, 142) 95% 100%
+  );
+}
+
+.openBook.right {
+  position: relative;
+  width: 8em;
+  height: 10em;
+  border-top-left-radius: 0.7em;
+  border-bottom-left-radius: 0.7em;
+  background-color: beige;
+  box-shadow: 0.1em 0.3em 1em rgb(52, 51, 51);
+  opacity: 0;
+
+  animation: open2 0.5s linear 3.4s forwards;
+}
+
+@keyframes open2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.openBook.right::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 7%;
+  bottom: 0%;
+  border-top-left-radius: 20em;
+  border-bottom-left-radius: 0.7em;
+  background-color: transparent;
+  border: 1px solid rgb(156, 156, 142);
+  box-sizing: border-box;
+  background: linear-gradient(
+    to bottom,
+    rgb(156, 156, 142) 0 10%,
+    transparent 10% 15%,
+    rgb(156, 156, 142) 15% 25%,
+    transparent 25% 30%,
+    rgb(156, 156, 142) 30% 40%,
+    transparent 40% 45%,
+    rgb(156, 156, 142) 45% 55%,
+    transparent 55% 60%,
+    rgb(156, 156, 142) 60% 70%,
+    transparent 75% 80%,
+    rgb(156, 156, 142) 80% 90%,
+    transparent 90% 95%,
+    rgb(156, 156, 142) 95% 100%
+  );
+}
+
+.speechBubble {
+  position: absolute;
+  width: 5em;
+  height: 2em;
+  background-color: lightsalmon;
+  border-radius: 2em;
+  text-align: center;
+  box-shadow: 0em 0.3em 1em rgb(52, 51, 51);
+  padding-top: 0.5em;
+  opacity: 0;
+  transform: translateY(-350%);
+  animation: popup 0.2s 4.6s forwards;
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.speechBubble::before {
+  position: absolute;
+  content: "";
+  width: 1em;
+  height: 1em;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%) rotateZ(45deg);
+  background-color: lightsalmon;
+  z-index: -1;
+}
